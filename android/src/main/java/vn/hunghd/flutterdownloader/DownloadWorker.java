@@ -337,6 +337,7 @@ public class DownloadWorker extends Worker implements MethodChannel.MethodCallHa
                         base = new URL(url);
                         next = new URL(base, location);  // Deal with relative URLs
                         url = next.toExternalForm();
+                        url = URLDecoder.decode(url, "UTF-8");
                         log("New url: " + url);
                         continue;
                 }
